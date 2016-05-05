@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PhenoCam.io</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">PhenoCam</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Installation</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Publications</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+  <header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>PhenoCam R Toolbox and Curated Dataset</h1>
+            <hr>
+            <p>Explore curated or download current PhenoCam data</p>
+            <a href="#services" class="btn btn-primary btn-xl page-scroll">Install Data Locally</a>
+	    <a href="#about" class="btn btn-primary btn-xl page-scroll">Explore Data Online</a>
+        </div>
+    </div>
+</header>
+
+  <section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">About the PhenoCam Data</h2>
+                <hr class="light">
+                <p class="text-faded">
+		Vegetation  phenology  controls  the  seasonality  of  many  ecosystem  processes,  as  well  as numerous biosphere-atmosphere feedbacks. Phenology is highly sensitive to climate change and  variability.  Here  we  present  a  series  of  datasets,  consisting  of  XXX  site-years  of observations,  characterizing  vegetation  phenology  in  diverse  ecosystems  across  North America. Our data are derived from conventional, visible-wavelength digital camera imagery collected through the PhenoCam network. For each archived image, we extracted RGB (red, green, blue) colour channel information, with means and other statistics calculated across a region-of-interest  (ROI)  delineating  a  specific  vegetation  type.  From  the  high-frequency (typically,  30  minute)  imagery,  we  derived  time  series characterizing  vegetation  colour, including “canopy greenness”, processed to 1- and 3-day intervals. For ecosystems with a single annual cycle of vegetation activity, we provide date estimates, with uncertainties, for the start, middle, and end of spring green-up and autumn green-down (senescent) phases. The PhenoCam database and R toolbox can be used for phenological model validation and development, evaluation of satellite remote sensing data products, and studies of climate change impacts on terrestrial ecosystems. 
+		</p>
+	           <a href="#services" class="btn btn-default btn-xl page-scroll">Install Data Locally</a>
+		   <a href="#about" class="btn btn-default btn-xl page-scroll">Explore Data Online</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Installation Instructions</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+		<p>This R package includes functions to query the latest version of the PhenoCam database alongside with a shiny web application as an alternative front end.</p>
+		<br>
+		<h3 class="section-heading">Install all dependent packages</h2>
+		<br>
+		<figure class="highlight"><pre><code class="language-r" data-lang="r">		<span class="n">install.packages</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
+		<span class="n">install.packages</span><span class="p">(</span><span class="s2">"shiny"</span><span class="p">)</span>
+		<span class="n">library</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
+		</code></pre></figure>
+
+		<br>
+		<h3 class="section-heading"> Install the PhenoCam R package and curated dataset (this is a xx Mb download)</h2>
+		<br>
+		<figure class="highlight"><pre><code class="language-r" data-lang="r">		<span class="n">install_github</span><span class="p">(</span><span class="s2">"khufkens/phenocamr"</span><span class="p">)</span>
+		</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="no-padding" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Selected Publications</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Sonnentag et al. 2012
+                            </div>
+                            <div class="project-name">
+                                Digital repeat photography for phenological research in forest ecosystems
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Klosterman et al. 2014
+                            </div>
+                            <div class="project-name">
+                                Evaluating remote sensing of deciduous forest phenology at multiple spatial scales using PhenoCam imagery
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Keenan et al. 2014
+                            </div>
+                            <div class="project-name">
+				Tracking forest phenology and seasonal physiology using digital repeat photography: a critical assessment
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Toomey et al. 2015
+                            </div>
+                            <div class="project-name">
+                               Greenness indices from digital cameras predict the timing and seasonal dynamics of canopy-scale photosynthesis
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Hufkens et al. 2012
+                            </div>
+                            <div class="project-name">
+                                Sprint frost paper
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#" class="portfolio-box">
+                    <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Hufkens et al. 2016
+                            </div>
+                            <div class="project-name">
+                                Grassland paper
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Contact Information</h2>
+                <hr class="primary">
+                <p>Questions, feedback, get in touch!</p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://twitter.com/">
+                <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p></p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p></p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p></p>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+  <!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+</body>
+
+</html>

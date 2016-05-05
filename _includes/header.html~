@@ -1,0 +1,11 @@
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>PhenoCam R Toolbox and Currated Dataset</h1>
+            <hr>
+            <p>Explore currated or download current PhenoCam data</p>
+            <a href="#services" class="btn btn-primary btn-xl page-scroll">Install Data Locally</a>
+	    <a href="#about" class="btn btn-primary btn-xl page-scroll">Explore Data Online</a>
+        </div>
+    </div>
+</header>

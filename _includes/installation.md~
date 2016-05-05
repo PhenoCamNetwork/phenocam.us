@@ -1,0 +1,23 @@
+
+This R package includes functions to query the latest version of The Plant List database alongside with a shiny web application as an alternative front end.
+
+## Data
+
+All data from the project is included in the R package.
+
+## Installation
+
+#### Install devtools and shiny
+
+```
+install.packages("devtools")
+install.packages("shiny")
+library("devtools")
+```
+
+####
+
+```
+install_github("khufkens/phenocamr")
+```
+
