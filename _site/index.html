@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PhenoCam.io</title>
+    <title>PhenoCam.us</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -56,7 +56,7 @@
                     <a class="page-scroll" href="#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Installation</a>
+                    <a class="page-scroll" href="#services">Download</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#portfolio">Publications</a>
@@ -74,11 +74,13 @@
   <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <h1>PhenoCam R Toolbox and Curated Dataset</h1>
+            <h1>PhenoCam Curated Dataset and R package</h1>
             <hr>
             <p>Explore curated or download current PhenoCam data</p>
             <a href="#services" class="btn btn-primary btn-xl page-scroll">Install Data Locally</a>
-	    <a href="#about" class="btn btn-primary btn-xl page-scroll">Explore Data Online</a>
+	    &nbsp
+	    &nbsp
+	    <a href="http://explore.phenocam.us" class="btn btn-primary btn-xl page-scroll">Explore Data Online</a>
         </div>
     </div>
 </header>
@@ -90,10 +92,12 @@
                 <h2 class="section-heading">About the PhenoCam Data</h2>
                 <hr class="light">
                 <p class="text-faded">
-		Vegetation  phenology  controls  the  seasonality  of  many  ecosystem  processes,  as  well  as numerous biosphere-atmosphere feedbacks. Phenology is highly sensitive to climate change and  variability.  Here  we  present  a  series  of  datasets,  consisting  of  XXX  site-years  of observations,  characterizing  vegetation  phenology  in  diverse  ecosystems  across  North America. Our data are derived from conventional, visible-wavelength digital camera imagery collected through the PhenoCam network. For each archived image, we extracted RGB (red, green, blue) colour channel information, with means and other statistics calculated across a region-of-interest  (ROI)  delineating  a  specific  vegetation  type.  From  the  high-frequency (typically,  30  minute)  imagery,  we  derived  time  series characterizing  vegetation  colour, including “canopy greenness”, processed to 1- and 3-day intervals. For ecosystems with a single annual cycle of vegetation activity, we provide date estimates, with uncertainties, for the start, middle, and end of spring green-up and autumn green-down (senescent) phases. The PhenoCam database and R toolbox can be used for phenological model validation and development, evaluation of satellite remote sensing data products, and studies of climate change impacts on terrestrial ecosystems. 
+		Vegetation  phenology  controls  the  seasonality  of  many  ecosystem  processes,  as  well  as numerous biosphere-atmosphere feedbacks. Phenology is highly sensitive to climate change and  variability.  Here  we  present  a  dataset,  consisting  of  <b>~750</b> site-years  of observations,  characterizing  vegetation  phenology  in  diverse  ecosystems  across  North America. Our data are derived from conventional, visible-wavelength digital camera imagery collected through the PhenoCam network. For each archived image, we extracted RGB (red, green, blue) colour channel information, with means and other statistics calculated across a region-of-interest  (ROI)  delineating  a  specific  vegetation  type.  From  the  high-frequency (typically,  30  minute)  imagery,  we  derived  time  series characterizing  vegetation  colour, including “canopy greenness”, processed to 1- and 3-day intervals. For ecosystems with a single annual cycle of vegetation activity, we provide date estimates, with uncertainties, for the start, middle, and end of spring green-up and autumn green-down (senescent) phases. The PhenoCam database and R toolbox can be used for phenological model validation and development, evaluation of satellite remote sensing data products, and studies of climate change impacts on terrestrial ecosystems. 
 		</p>
 	           <a href="#services" class="btn btn-default btn-xl page-scroll">Install Data Locally</a>
-		   <a href="#about" class="btn btn-default btn-xl page-scroll">Explore Data Online</a>
+			&nbsp
+			&nbsp
+		   <a href="http://explore.phenocam.us" class="btn btn-default btn-xl page-scroll">Explore Data Online</a>
             </div>
         </div>
     </div>
@@ -103,34 +107,33 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Installation Instructions</h2>
+                <h2 class="section-heading">Download Instructions</h2>
                 <hr class="primary">
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
+		<br>
+		<h3 class="section-heading"> Download the full dataset from the 
+		<a href="https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1511">ORNL DAAC</a></h2>
+		<br>
+		<h3 class="section-heading"> Download a limited subset from <a href="https://github.com/khufkens/phenocam_dataset/archive/master.zip">github</a> or clone the repository</h2>
+		<br>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/khufkens/phenocam_dataset.git</code></pre></figure>
+		<br>
+		<h3 class="section-heading"> Install the PhenoCam R package to query (more recent) data</h2>
+		<br>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">require</span><span class="p">(</span><span class="n">devtools</span><span class="p">)){</span><span class="n">install.package</span><span class="p">(</span><span class="n">devtools</span><span class="p">)}</span><span class="w">
+</span><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"khufkens/phenocamr"</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">phenocamr</span><span class="p">)</span></code></pre></figure>
+		<br>
 
-		<p>This R package includes functions to query the latest version of the PhenoCam database alongside with a shiny web application as an alternative front end.</p>
-		<br>
-		<h3 class="section-heading">Install all dependent packages</h2>
-		<br>
-		<figure class="highlight"><pre><code class="language-r" data-lang="r">		<span class="n">install.packages</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
-		<span class="n">install.packages</span><span class="p">(</span><span class="s2">"shiny"</span><span class="p">)</span>
-		<span class="n">library</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
-		</code></pre></figure>
-
-		<br>
-		<h3 class="section-heading"> Install the PhenoCam R package and curated dataset (this is a xx Mb download)</h2>
-		<br>
-		<figure class="highlight"><pre><code class="language-r" data-lang="r">		<span class="n">install_github</span><span class="p">(</span><span class="s2">"khufkens/phenocamr"</span><span class="p">)</span>
-		</code></pre></figure>
 
             </div>
         </div>
     </div>
 </section>
-
   <section class="no-padding" id="portfolio">
     <div class="container">
         <div class="row">
@@ -143,7 +146,7 @@
     <div class="container-fluid">
         <div class="row no-gutter">
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://www.sciencedirect.com/science/article/pii/S0168192311002851" class="portfolio-box">
                     <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -158,7 +161,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://www.biogeosciences.net/11/4305/2014/" class="portfolio-box">
                     <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -173,7 +176,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://onlinelibrary.wiley.com/doi/10.1890/13-0652.1/abstract" class="portfolio-box">
                     <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -181,14 +184,14 @@
                                 Keenan et al. 2014
                             </div>
                             <div class="project-name">
-				Tracking forest phenology and seasonal physiology using digital repeat photography: a critical assessment
+				                          Tracking forest phenology and seasonal physiology using digital repeat photography: a critical assessment
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://onlinelibrary.wiley.com/doi/10.1890/14-0005.1/abstract" class="portfolio-box">
                     <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -203,7 +206,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2486.2012.02712.x/abstract" class="portfolio-box">
                     <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -211,14 +214,14 @@
                                 Hufkens et al. 2012
                             </div>
                             <div class="project-name">
-                                Sprint frost paper
+                              Ecological impacts of a widespread frost event following early spring leaf-out
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="http://www.nature.com/nclimate/journal/vaop/ncurrent/full/nclimate2942.html" class="portfolio-box">
                     <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -226,7 +229,7 @@
                                 Hufkens et al. 2016
                             </div>
                             <div class="project-name">
-                                Grassland paper
+                              Productivity of North American grasslands is increased under future climate scenarios despite rising aridity
                             </div>
                         </div>
                     </div>
@@ -245,21 +248,21 @@
                 <p>Questions, feedback, get in touch!</p>
             </div>
         <div class="col-lg-2 col-lg-offset-2 text-center">
-            <a href="https://twitter.com/">
+            <a href="https://twitter.com/phenocam">
                 <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p></p>
+                <p>phenocam</p>
             </a>
         </div>
         <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="mailto:">
+            <a href="mailto:phenocam@nau.edu">
             <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p></p>
+                <p>phenocam@nau.edu</p>
             </a>
         </div>
         <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="https://github.com/">
+            <a href="https://github.com/khufkens/phenocamr">
             <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p></p>
+                <p>khufkens/phenocamr</p>
             </a>
         </div>
 
