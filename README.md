@@ -1,3 +1,3 @@
 # phenocam
 
-The PhenoCam.io website
+The PhenoCam.us website
